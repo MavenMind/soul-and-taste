@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ContactForm } from "./contact-form";
 
 const experiences = [
   {
@@ -44,9 +45,6 @@ const steps = [
     body: "Local hosts, bookings and transfers are handled. You simply enjoy.",
   },
 ];
-
-const fieldClass =
-  "min-h-12 rounded border border-field bg-white px-3.5 text-base font-normal text-foreground";
 
 const pillPrimary =
   "inline-flex items-center rounded-full bg-accent px-7 font-medium text-white transition-colors hover:bg-accent-hover hover:text-white active:bg-accent-active";
@@ -212,51 +210,7 @@ export default function Home() {
                 </a>
               </p>
             </div>
-            <form className="flex flex-col gap-5">
-              <label className="flex flex-col gap-2 text-sm font-medium">
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  className={fieldClass}
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-medium">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="you@email.com"
-                  className={fieldClass}
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-medium">
-                Travel dates
-                <input
-                  type="text"
-                  name="dates"
-                  placeholder="e.g. 12–16 May"
-                  className={fieldClass}
-                />
-              </label>
-              <label className="flex flex-col gap-2 text-sm font-medium">
-                What are you looking for?
-                <textarea
-                  name="message"
-                  rows={4}
-                  placeholder="Surf, yoga, food – or all three"
-                  className={`${fieldClass} resize-y py-3`}
-                />
-              </label>
-              {/* TODO: wire up submission (email service or API route) */}
-              <button
-                type="button"
-                className="min-h-[52px] cursor-pointer self-start rounded-full bg-accent px-8 font-medium text-white transition-colors hover:bg-accent-hover active:bg-accent-active"
-              >
-                Send request
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
